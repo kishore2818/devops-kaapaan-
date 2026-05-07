@@ -40,6 +40,10 @@ pipeline {
 PORT=5000
 CRM_PORT=4000
 
+
+
+
+
 MONGO_URI=mongodb+srv://nt03625:mzRewbYxcaNBVX3A@clusterdb.ycdxi.mongodb.net/traffic_violation?retryWrites=true&w=majority
 
 CLOUDINARY_CLOUD_NAME=ddg5ao8e7
