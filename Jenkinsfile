@@ -1,12 +1,18 @@
 pipeline {
     agent any
 
+    tools {
+        nodejs 'NodeJS20'
+    }
+
     stages {
 
         stage('GitHub Check') {
             steps {
                 sh 'pwd'
                 sh 'ls -la'
+                sh 'node -v'
+                sh 'npm -v'
             }
         }
 
