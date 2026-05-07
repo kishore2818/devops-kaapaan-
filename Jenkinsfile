@@ -1,8 +1,8 @@
 pipeline {
     agent any
 
-    tools {
-        nodejs 'NodeJS20'
+    environment {
+        PATH = "/opt/homebrew/bin:/usr/local/bin:${env.PATH}"
     }
 
     stages {
@@ -11,8 +11,8 @@ pipeline {
             steps {
                 sh 'pwd'
                 sh 'ls -la'
-                sh 'node -v'
-                sh 'npm -v'
+                sh 'node -v || true'
+                sh 'npm -v || true'
             }
         }
 
@@ -50,5 +50,6 @@ pipeline {
                 sh 'docker ps'
             }
         }
+
     }
 }
