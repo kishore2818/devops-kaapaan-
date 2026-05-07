@@ -50,6 +50,5 @@ pipeline {
                 sh 'docker ps'
             }
         }
-
     }
 }
