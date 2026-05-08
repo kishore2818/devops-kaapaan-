@@ -14,7 +14,7 @@ const LoginPage = ({ setIsLoggedIn }) => {
   const navigate = useNavigate();
 
   const theme = {
-    systemName: 'K A A P A A N',
+    systemName: 'KAAPAAN',
     tagline: 'AI-Enabled Government Traffic Intelligence Platform',
     logoPath: '/image.png', // must be inside public/
     primaryColor: '#1a365d',
