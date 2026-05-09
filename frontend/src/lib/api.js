@@ -1,7 +1,7 @@
 const trimTrailingSlash = (value = "") => value.replace(/\/+$/, "");
-export const API_BASE_URL = trimTrailingSlash("http://98.94.85.231:5001");
-export const WS_BASE_URL = trimTrailingSlash("ws://98.94.85.231:5001");
-export const CRIMINAL_API_BASE_URL = trimTrailingSlash("http://98.94.85.231:5001");
+export const API_BASE_URL = trimTrailingSlash("/api");
+export const WS_BASE_URL = trimTrailingSlash("ws://98.94.85.231/ws");
+export const CRIMINAL_API_BASE_URL = trimTrailingSlash("/api");
 
 export const apiUrl = (path) => {
   const normalizedPath = path.startsWith("/") ? path : `/${path}`;

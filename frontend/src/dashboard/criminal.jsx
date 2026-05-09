@@ -41,11 +41,11 @@
 // //       if (searchTerm) params.append('search', searchTerm);
       
 // //       // Fetch CRM details from backend
-// //       const crmResponse = await fetch(`http://98.94.85.231:5001/api/crm-details?${params}`);
+// //       const crmResponse = await fetch(`/api/crm-details?${params}`);
 // //       const crmData = await crmResponse.json();
       
 // //       // Fetch detections from backend
-// //       const detectionsResponse = await fetch('http://98.94.85.231:5001/api/detections');
+// //       const detectionsResponse = await fetch('/api/detections');
 // //       const detectionsData = await detectionsResponse.json();
       
 // //       // Handle CRM data
@@ -154,7 +154,7 @@
 // //   const handleDeleteCrm = async (id) => {
 // //     if (window.confirm('Are you sure you want to delete this record? This action cannot be undone.')) {
 // //       try {
-// //         const response = await fetch(`http://98.94.85.231:5001/api/crm-details/${id}`, {
+// //         const response = await fetch(`/api/crm-details/${id}`, {
 // //           method: 'DELETE',
 // //         });
         
@@ -180,7 +180,7 @@
 // //   const handleDeleteDetection = async (id) => {
 // //     if (window.confirm('Are you sure you want to delete this detection?')) {
 // //       try {
-// //         const response = await fetch(`http://98.94.85.231:5001/api/detections/${id}`, {
+// //         const response = await fetch(`/api/detections/${id}`, {
 // //           method: 'DELETE',
 // //         });
         
@@ -216,7 +216,7 @@
 // //         formDataToSend.append('image', imageFile);
 // //       }
       
-// //       const response = await fetch('http://98.94.85.231:5001/api/crm-details', {
+// //       const response = await fetch('/api/crm-details', {
 // //         method: 'POST',
 // //         body: formDataToSend,
 // //       });
@@ -262,7 +262,7 @@
 // //         formDataToSend = JSON.stringify(formData);
 // //       }
       
-// //       const response = await fetch(`http://98.94.85.231:5001/api/crm-details/${id}`, {
+// //       const response = await fetch(`/api/crm-details/${id}`, {
 // //         method: 'PUT',
 // //         headers: imageFile ? {} : { 'Content-Type': 'application/json' },
 // //         body: formDataToSend,
@@ -1423,10 +1423,10 @@
 //       if (districtFilter !== 'all') params.append('district', districtFilter);
 //       if (searchTerm) params.append('search', searchTerm);
       
-//       const crmResponse = await fetch(`http://98.94.85.231:5001/api/crm-details?${params}`);
+//       const crmResponse = await fetch(`/api/crm-details?${params}`);
 //       const crmData = await crmResponse.json();
       
-//       const detectionsResponse = await fetch('http://98.94.85.231:5001/api/detections?includeImages=true');
+//       const detectionsResponse = await fetch('/api/detections?includeImages=true');
 //       const detectionsData = await detectionsResponse.json();
       
 //       if (crmData.success && Array.isArray(crmData.data)) {
@@ -1549,7 +1549,7 @@
 //   const handleDeleteCrm = async (id) => {
 //     if (window.confirm('Are you sure you want to delete this record? This action cannot be undone.')) {
 //       try {
-//         const response = await fetch(`http://98.94.85.231:5001/api/crm-details/${id}`, {
+//         const response = await fetch(`/api/crm-details/${id}`, {
 //           method: 'DELETE',
 //         });
         
@@ -1575,7 +1575,7 @@
 //   const handleDeleteDetection = async (id) => {
 //     if (window.confirm('Are you sure you want to delete this detection?')) {
 //       try {
-//         const response = await fetch(`http://98.94.85.231:5001/api/detections/${id}`, {
+//         const response = await fetch(`/api/detections/${id}`, {
 //           method: 'DELETE',
 //         });
         
@@ -1610,7 +1610,7 @@
 //         formDataToSend.append('image', imageFile);
 //       }
       
-//       const response = await fetch('http://98.94.85.231:5001/api/crm-details', {
+//       const response = await fetch('/api/crm-details', {
 //         method: 'POST',
 //         body: formDataToSend,
 //       });
@@ -1653,7 +1653,7 @@
 //         formDataToSend = JSON.stringify(formData);
 //       }
       
-//       const response = await fetch(`http://98.94.85.231:5001/api/crm-details/${id}`, {
+//       const response = await fetch(`/api/crm-details/${id}`, {
 //         method: 'PUT',
 //         headers: imageFile ? {} : { 'Content-Type': 'application/json' },
 //         body: formDataToSend,

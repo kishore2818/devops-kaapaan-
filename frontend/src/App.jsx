@@ -433,7 +433,7 @@
 //   // ================= FETCH EXISTING DETECTIONS =================
 //   const fetchInitialDetections = async () => {
 //     try {
-//       const res = await axios.get("http://98.94.85.231:5001/api/detections");
+//       const res = await axios.get("/api/detections");
 
 //       if (res.data?.success && Array.isArray(res.data.data)) {
 //         res.data.data.forEach((d) => knownDetectionIds.current.add(d._id));
@@ -454,7 +454,7 @@
 //     }
 
 //     try {
-//       wsRef.current = new WebSocket("ws://98.94.85.231:5001");
+//       wsRef.current = new WebSocket("ws://98.94.85.231/ws");
 
 //       wsRef.current.onopen = () => {
 //         console.log("✅ WebSocket connected (detections)");
