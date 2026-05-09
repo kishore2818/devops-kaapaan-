@@ -53,7 +53,7 @@ const Photos = () => {
   const fetchViolations = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(apiUrl('/api/violations'));
+      const response = await axios.get(apiUrl('/violations'));
       setViolations(response.data.map(normalizeViolation));
     } catch (error) {
       console.error('Error fetching violations:', error);
@@ -110,7 +110,7 @@ const Photos = () => {
 
     try {
       setDeletingId(violationId);
-      await axios.delete(apiUrl(`/api/violations/${violationId}`));
+      await axios.delete(apiUrl(`/violations/${violationId}`));
 
       setViolations((current) => current.filter((item) => item._id !== violationId));
       setSelectedViolation((current) => (current?._id === violationId ? null : current));

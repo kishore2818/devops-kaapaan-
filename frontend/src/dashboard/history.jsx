@@ -15,7 +15,7 @@ const Videos = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch(apiUrl('/api/videos'))
+    fetch(apiUrl('/videos'))
             // fetch('https://kaapaan-backend.onrender.com/api/google-drive-videos')
 
 
@@ -68,7 +68,7 @@ const Videos = () => {
   };
 
   const fetchRelatedPhotos = (videoName) => {
-    fetch(apiUrl(`/api/photos?videoName=${encodeURIComponent(videoName)}`))
+    fetch(apiUrl(`/photos?videoName=${encodeURIComponent(videoName)}`))
     // fetch(`https://kaapaan-backend.onrender.com/api/photos?videoName=${videoName}`)
 
       .then((res) => res.json())

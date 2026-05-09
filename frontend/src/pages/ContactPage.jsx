@@ -843,7 +843,7 @@ const TrafficViolationDashboard = () => {
   const fetchData = async () => {
     try {
       setIsLoading(true);
-      const response = await fetch(apiUrl('/api/violations/all'));
+      const response = await fetch(apiUrl('/violations/all'));
       const data = (await response.json()).map(normalizeViolation);
 
       if (response.ok) {
@@ -993,7 +993,7 @@ const TrafficViolationDashboard = () => {
     
     try {
       setIsDeleting(true);
-      const response = await fetch(apiUrl(`/api/violations/${imageId}`), {
+      const response = await fetch(apiUrl(`/violations/${imageId}`), {
         method: 'DELETE',
       });
 

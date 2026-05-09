@@ -76,7 +76,7 @@ const VerifiedByStats = () => {
 
   const fetchStats = async () => {
     try {
-      const res = await axios.get(apiUrl('/api/violations/verified-by'));
+      const res = await axios.get(apiUrl('/violations/verified-by'));
             // const res = await axios.get('https://kaapaan-backend.onrender.com/api/violations/verified-by');
 
       // Filter to only include police_001 to police_005 and remove unknown IDs

@@ -1197,7 +1197,7 @@ const TrafficViolationDashboard = () => {
     try {
       setIsLoading(true);
       // const response = await fetch('https://kaapaan-backend.onrender.com/api/violations/all');
-            const response = await fetch(apiUrl('/api/violations/all'));
+            const response = await fetch(apiUrl('/violations/all'));
 
       const data = (await response.json()).map(normalizeViolation);
 
@@ -1349,7 +1349,7 @@ const TrafficViolationDashboard = () => {
       setDeletingId(imageId);
       
       // const deleteResponse = await fetch('https://kaapaan-backend.onrender.com/api/violations/delete', {
-            const deleteResponse = await fetch(apiUrl(`/api/violations/${imageId}`), {
+            const deleteResponse = await fetch(apiUrl(`/violations/${imageId}`), {
 
         method: 'DELETE',
         headers: {

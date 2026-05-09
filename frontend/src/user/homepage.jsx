@@ -24,7 +24,7 @@ const ViolationManagement = () => {
 
   const fetchViolations = async () => {
     try {
-      const response = await axios.get(apiUrl('/api/violations'));
+      const response = await axios.get(apiUrl('/violations'));
       const processed = response.data.map(v => ({
         ...normalizeViolation(v),
         verified: v.verified === true,
@@ -58,7 +58,7 @@ const ViolationManagement = () => {
     if (selectedViolations.length === 0) return;
     setIsVerifying(true);
     try {
-      await axios.patch(apiUrl('/api/violations/verify'), {
+      await axios.patch(apiUrl('/violations/verify'), {
         ids: selectedViolations
       });
       await fetchViolations();

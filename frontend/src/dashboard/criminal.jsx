@@ -3216,10 +3216,10 @@ function CriminalPage({ onLogout }) {
       if (districtFilter !== 'all') params.append('district', districtFilter);
       if (searchTerm) params.append('search', searchTerm);
       
-      const crmResponse = await fetch(criminalApiUrl(`/api/crm-details?${params.toString()}`));
+      const crmResponse = await fetch(criminalApiUrl('/crm-details?${params.toString()}`));
       const crmData = await crmResponse.json();
       
-      const detectionsResponse = await fetch(criminalApiUrl('/api/detections?includeImages=true'));
+      const detectionsResponse = await fetch(criminalApiUrl('/detections?includeImages=true'));
       const detectionsData = await detectionsResponse.json();
       
       if (crmData.success && Array.isArray(crmData.data)) {
@@ -3357,7 +3357,7 @@ function CriminalPage({ onLogout }) {
   const handleDeleteCrm = async (id) => {
     if (window.confirm('Are you sure you want to delete this record? This action cannot be undone.')) {
       try {
-        const response = await fetch(criminalApiUrl(`/api/crm-details/${id}`), {
+        const response = await fetch(criminalApiUrl('/crm-details/${id}`), {
           method: 'DELETE',
         });
         
@@ -3383,7 +3383,7 @@ function CriminalPage({ onLogout }) {
   const handleDeleteDetection = async (id) => {
     if (window.confirm('Are you sure you want to delete this detection?')) {
       try {
-        const response = await fetch(criminalApiUrl(`/api/detections/${id}`), {
+        const response = await fetch(criminalApiUrl('/detections/${id}`), {
           method: 'DELETE',
         });
         
@@ -3418,7 +3418,7 @@ function CriminalPage({ onLogout }) {
         formDataToSend.append('image', imageFile);
       }
       
-      const response = await fetch(criminalApiUrl('/api/crm-details'), {
+      const response = await fetch(criminalApiUrl('/crm-details'), {
         method: 'POST',
         body: formDataToSend,
       });
@@ -3461,7 +3461,7 @@ function CriminalPage({ onLogout }) {
         formDataToSend = JSON.stringify(formData);
       }
       
-      const response = await fetch(criminalApiUrl(`/api/crm-details/${id}`), {
+      const response = await fetch(criminalApiUrl('/crm-details/${id}`), {
         method: 'PUT',
         headers: imageFile ? {} : { 'Content-Type': 'application/json' },
         body: formDataToSend,
@@ -3608,7 +3608,7 @@ function CriminalPage({ onLogout }) {
     if (window.confirm(`Are you sure you want to delete ${selectedEvidenceItems.length} selected evidence items?`)) {
       try {
         const deletePromises = selectedEvidenceItems.map(id => 
-          fetch(criminalApiUrl(`/api/detections/${id}`), {
+          fetch(criminalApiUrl('/detections/${id}`), {
             method: 'DELETE',
           })
         );

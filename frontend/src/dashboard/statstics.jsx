@@ -2170,7 +2170,7 @@ const TrafficViolationDashboard = () => {
       try {
         setIsLoading(true);
         // const response = await fetch('https://kaapaan-backend.onrender.com/api/violations');
-        const response = await fetch(apiUrl('/api/violations/all'));
+        const response = await fetch(apiUrl('/violations/all'));
 
         const data = (await response.json())
           .map(normalizeViolation)

@@ -19,7 +19,7 @@ const VerifiedViolations = () => {
 
   const fetchVerified = async () => {
     try {
-      const res = await axios.get(apiUrl('/api/violations'));
+      const res = await axios.get(apiUrl('/violations'));
       const verifiedOnly = res.data
         .filter(v => v.verified === true)
         .map(v => ({
@@ -57,7 +57,7 @@ const VerifiedViolations = () => {
 
   const downloadCSV = async () => {
     try {
-      const response = await axios.get(apiUrl('/api/violations/verified/csv'), {
+      const response = await axios.get(apiUrl('/violations/verified/csv'), {
         responseType: 'blob', // Important to handle the file as a blob
       });
       // Create a link element to trigger the download

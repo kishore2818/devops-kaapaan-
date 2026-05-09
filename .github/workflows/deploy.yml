@@ -10,19 +10,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Deploy to EC2
+      - name: Deploy Application
         uses: appleboy/ssh-action@v1.0.3
+
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
+
           script: |
+            set -e
+
             cd ~/devops-kaapaan-
 
+            echo "Pulling latest code..."
             git pull origin main
 
+            echo "Stopping old containers..."
             docker compose down
 
+            echo "Building and starting containers..."
             docker compose up --build -d
 
+            echo "Cleaning unused images..."
             docker image prune -f
+
+            echo "Deployment completed successfully!"
