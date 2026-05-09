@@ -18,8 +18,8 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/api': 'http://localhost:5001',
-      '/output_videos': 'http://localhost:5001',
+      '/api': 'http://98.94.85.231:5001',
+      '/output_videos': 'http://98.94.85.231:5001',
     },
   },
   build: {
