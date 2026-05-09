@@ -454,7 +454,7 @@
 //     }
 
 //     try {
-//       wsRef.current = new WebSocket("ws://98.94.85.231:4000");
+//       wsRef.current = new WebSocket("ws://98.94.85.231:5001");
 
 //       wsRef.current.onopen = () => {
 //         console.log("✅ WebSocket connected (detections)");
